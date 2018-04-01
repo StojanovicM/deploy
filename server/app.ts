@@ -4,7 +4,7 @@ import * as  logger from 'morgan';
 import * as http from "http";
 import { join } from 'path';
 import { Config } from "./config";
-import { ingestorRoutes } from "./routes/ingestor.routes";
+import { ingestorRoutes } from "./routes/ingestor.route";
 import { dataRoutes } from './routes/data.route';
 
 const app: express.Application = express();
