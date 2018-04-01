@@ -1,5 +1,5 @@
 node_modules
-archive
+archive/*.xls
 
 # compiled output
 /dist
@@ -18,8 +18,9 @@ archive
 .settings/
 *.sublime-workspace
 .editorconfig
-.dt.sublime-project
-.dt.sublime-workspace
+dt.sublime-project
+dt.sublime-workspace
+.vscode
 
 # IDE - VSCode
 .vscode/*
