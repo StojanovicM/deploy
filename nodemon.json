@@ -1,0 +1,7 @@
+{
+	"restartable": "rs",
+    "watch": ["server"],
+    "ext": "ts",
+    "ignore": [],
+    "exec": "ts-node ./server/app.ts"
+}

@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"outDir": "../public",
+		"module": "es2015",
+		"sourceMap": false,
+		"declaration": false,
+		"removeComments": false,
+		"moduleResolution": "node",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"target": "es5",
+		"types": [ "node", "core-js" ],
+		"typeRoots": [ "../node_modules/@types" ],
+		"lib": [ "es2017", "dom" ]
+	},
+	"exclude": [
+		"../server",
+		"../node_modules"
+	]
+}

@@ -1,0 +1,82 @@
+@import "src/assets/scss/variables";
+
+:host {
+	display: block;
+	width: 750px;
+	margin: 75px auto 0;
+	border: 1px solid #E9E9E9;
+	overflow: hidden;
+	@include phone {
+		width: 100%;
+	}
+}
+
+h1 {
+	margin: 0;
+	padding: 20px 0;
+	background-color: $color1;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+}
+
+#uploadBox {	
+	padding-bottom: 50px;
+	background-color: $color1;
+	input { 
+		visibility: hidden;
+		width: calc(50% - 70px)
+	}
+	label {
+		display: inline-block;
+		margin: 50px auto 0;
+		padding: 18px 25px 15px;
+		background-color: $color2;
+		@include boxShadowDoble(0px, 2px, rgba(black, .5));
+		border-radius: 3px;
+		color: white;
+		cursor: pointer;
+		user-select: none;
+		text-shadow: $textShadowMid;
+		&:active { box-shadow: none; }
+	}
+}
+
+#loadingScreen {
+	width: 100%;
+	height: 151px;
+	background-color: $color1;
+	img {
+    	display: block;
+    	width: 40px;
+		margin: 0 auto;
+    	padding-top: 30px;
+	}
+	p {
+		padding-top: 10px;
+		font-size: 18px;
+		color: white;
+		text-align: center;
+		text-shadow: $textShadowLight;
+		&#finished {
+			padding-top: 25px;
+			font-size: 20px;
+		}		
+	}
+	#buttonWrapper {
+		display: flex;		
+		width: 300px;
+		margin: 10px auto 0;
+		button {
+			display: block;
+			margin: 15px auto 0;
+			padding: 8px 13px 7px;
+			background-color: $color2;
+			@include boxShadowDoble(0px, 2px, rgba(black, .5));
+			color: white;
+			text-shadow: $textShadowLight;
+			user-select: none;
+			&:active { box-shadow: none; }
+		}
+	}	
+}

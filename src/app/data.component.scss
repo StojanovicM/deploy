@@ -1,0 +1,166 @@
+@import "src/assets/scss/variables";
+
+:host {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+h1 {
+	margin-left: 50px;
+	font-size: 25px;
+	@include phone { margin-left: 10px; }
+}
+
+#filterBox {
+	display: flex;
+	width: 250px;
+	flex-direction: column;
+	margin-left: 50px;
+	@include phone { margin-left: 10px; }
+	input {
+		margin-bottom: 10px;
+		padding: 5px 0;
+		outline: 0;
+		font-size: 13px;
+		text-indent: 10px;
+		&::placeholder {			
+			color: $color13;
+			text-indent: 10px;
+		}
+		&:focus::placeholder {
+			color: white;
+		}
+		&:hover { outline: 0; }
+	}
+}
+
+table {
+	margin-left: 50px;
+	width: 900px;
+	border: 1px solid rgba($color13, .4);
+	border-collapse: collapse;
+	@include phone {
+		width: 100%;
+		margin-left: 0;
+	}
+	thead {
+		th { 
+			height: 40px;
+			padding-top: 8px;
+			padding-bottom: 5px;
+			background-color: $color2;
+			color: white;
+			user-select: none;
+			cursor: pointer;
+			&:nth-child(1) { width: 50px; }
+			&:nth-child(2) { padding-left: 10px; }
+			&:nth-child(3) { width: 135px; }
+			&:nth-child(4) { width: 135px; padding-left: 10px; }
+			&:nth-child(5) { width: 135px; padding-left: 10px; }
+			&:nth-child(6) { width: 150px; }
+			@include phone {
+				font-size: 14px;
+				width: auto !important;
+				&:nth-child(1) { display: none; }
+				&:nth-child(3) { width: 80px; padding-left: 2px; }
+				&:nth-child(4) { width: 110px; padding-left: 2px; }
+				&:nth-child(5) { width: 75px; padding-left: 2px; }
+				&:nth-child(6) { width: 90px; }
+			}
+		}
+	}
+	tbody {
+		tr {
+			&:nth-child(odd) { background-color: $color1; }
+			&:nth-child(even) { background-color: $color3; }
+		}
+		td {
+			padding-top: 8px;
+			padding-bottom: 5px;
+			border: 1px solid rgba($color13, .4);
+			font-size: 14px;
+			&:nth-child(1) { text-align: right; padding-right: 10px; }
+			&:nth-child(2) { padding-left: 10px; cursor: pointer;}
+			&:nth-child(3) { text-align: right; padding-right: 10px; }
+			&:nth-child(4) { padding-left: 10px; }
+			&:nth-child(5) { padding-left: 10px; }
+			&:nth-child(6) { text-align: right; padding-right: 10px; }
+			@include phone {
+				font-size: 12px;
+				width: auto !important;
+				&:nth-child(1) { display: none; }
+				&:nth-child(2) { padding-left: 5px; cursor: pointer;}
+				&:nth-child(3) { text-align: right; padding-right: 5px; }
+				&:nth-child(4) { padding-left: 5px; }
+				&:nth-child(5) { padding-left: 5px; }
+				&:nth-child(6) { text-align: right; padding-right: 5px; }
+			}
+		}	
+	}
+	
+}
+
+#dataModal {
+	position: fixed;
+	top: 150px;
+	left: 200px;
+	display: flex;
+	flex-direction: column;
+	width: 398px;
+	border: 1px solid rgba($color13, .5);
+	min-height: 200px;
+	background-color: $color2;
+	@include boxShadowDoble(1px, 25px, rgba(black, .75));
+	ul {
+		margin: 20px 0 15px 20px;
+		li {
+			margin-top: 5px;
+			color: white;
+			text-transform: lowercase;
+			font-size: 15px;
+			&#fileList {
+				display: flex;
+			}
+			p { 
+				display: flex;
+				flex-wrap: wrap;
+				max-width: 220px;
+				span { 
+					margin-left: 5px;
+					color: white;
+					text-shadow: $textShadowLight;
+					&::after { content: ","}
+					&:nth-last-of-type(1) { &::after { content: ""; } } 
+				}
+			}
+			.header {
+				display: inline-block;
+				min-width: 110px;
+				padding-right: 5px;
+				text-align: right;
+			}
+			.data {
+				margin-left: 3px;
+				color: $color3;
+				text-transform: none;
+				text-shadow: $textShadowLight;
+				&.negative { color: #ffcc00; }
+			}
+		}
+	}
+	button {
+		margin: auto auto 20px;
+		padding: 8px 12px 7px;
+		background-color: $color1;
+		border-radius: 3px;
+		font-size: 15px;
+		color: black;
+		letter-spacing: 2px;
+		text-shadow: $textShadowMid;
+		@include boxShadowDoble(0px, 5px, rgba(black, .3));
+		&:active { box-shadow: none; }
+	}
+}
